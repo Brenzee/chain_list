@@ -1,0 +1,46 @@
+{
+  "main": {
+    "name": "Mainnet",
+    "chain_id": 1
+  },
+  "mainnet": {
+    "name": "Mainnet",
+    "chain_id": 1
+  },
+  "sepolia": {
+    "name": "Sepolia",
+    "chain_id": 11155111
+  },
+  "holesky": {
+    "name": "Holesky",
+    "chain_id": 17000
+  },
+  "base": {
+    "name": "Base",
+    "chain_id": 8453
+  },
+  "arbitrum": {
+    "name": "Arbitrum",
+    "chain_id": 42161
+  },
+  "arbitrum_one": {
+    "name": "Arbitrum One",
+    "chain_id": 42161
+  },
+  "optimism": {
+    "name": "Optimism",
+    "chain_id": 10
+  },
+  "op": {
+    "name": "Optimism",
+    "chain_id": 10
+  },
+  "op_mainnet": {
+    "name": "Optimism",
+    "chain_id": 10
+  },
+  "zksync": {
+    "name": "zkSync",
+    "chain_id": 324
+  }
+}
