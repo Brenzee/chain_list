@@ -1,18 +1,17 @@
+use serde_json::from_str;
 use std::collections::HashMap;
 use std::error::Error;
-use std::fs::File;
-
-use serde_json::from_reader;
 
 #[derive(serde::Deserialize)]
 struct Network {
     chain_id: u64,
 }
 
+const NETWORKS_JSON: &str = include_str!("../data/networks.json");
+
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    let file = File::open("data/networks.json")?;
-    let contents: HashMap<String, Network> = from_reader(file).unwrap_or_else(|err| {
-        eprintln!("Error reading file, should not happen: {}", err);
+    let contents: HashMap<String, Network> = from_str(NETWORKS_JSON).unwrap_or_else(|err| {
+        eprintln!("Error parsing embedded JSON data: {}", err);
         std::process::exit(1);
     });
 
@@ -24,6 +23,7 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
+
 pub struct Config {
     pub chain: String,
 }
